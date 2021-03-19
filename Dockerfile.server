@@ -1,0 +1,13 @@
+FROM alpine:3.13
+LABEL author="Vitalii Vrublevskyi"
+
+RUN apk add --no-cache --upgrade bash
+
+RUN mkdir server
+WORKDIR /netcat
+
+COPY server.sh /netcat/server.sh
+RUN chmod u+x server.sh
+
+# ENTRYPOINT ["/netcat/", "server.sh"]
+CMD ./server.sh
