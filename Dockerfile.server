@@ -3,11 +3,13 @@ LABEL author="Vitalii Vrublevskyi"
 
 RUN apk add --no-cache --upgrade bash
 
-RUN mkdir server
-WORKDIR /netcat
+RUN mkdir netcat
 
-COPY server.sh /netcat/server.sh
+COPY server.sh /
+RUN cp /server.sh /netcat/server.sh
+
+WORKDIR /netcat
 RUN chmod u+x server.sh
 
-# ENTRYPOINT ["/netcat/", "server.sh"]
-CMD ./server.sh
+CMD ["/netcat/server.sh"]
+# CMD ["/bin/sh"]

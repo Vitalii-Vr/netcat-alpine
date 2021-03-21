@@ -12,6 +12,6 @@ touch output.log
 # done
 while :; 
 do 
-    nc -l localhost 2399 >> output.log
+    nc -l netcat-client 2399 >> output.log
 done
-netcat-server 
+# netcat-server 

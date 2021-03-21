@@ -3,11 +3,13 @@ LABEL author="Vitalii Vrublevskyi"
 
 RUN apk add --no-cache --upgrade bash
 
-RUN mkdir client
-WORKDIR /netcat
+RUN mkdir netcat
 
-COPY client.sh /netcat/client.sh
+COPY client.sh /
+RUN cp /client.sh /netcat/client.sh
+
+WORKDIR /netcat
 RUN chmod u+x client.sh
 
-# ENTRYPOINT ["/netcat/", "client.sh"]
-CMD ./client.sh
+# CMD ["/bin/sh"]
+CMD ["/netcat/client.sh"]
