@@ -6,10 +6,9 @@ RUN apk add --no-cache --upgrade bash
 RUN mkdir netcat
 
 COPY client.sh /
-RUN cp /client.sh /netcat/client.sh
+RUN cp client.sh /netcat/client.sh
 
 WORKDIR /netcat
 RUN chmod u+x client.sh
 
-# CMD ["/bin/sh"]
 CMD ["/netcat/client.sh"]

@@ -6,10 +6,11 @@ RUN apk add --no-cache --upgrade bash
 RUN mkdir netcat
 
 COPY server.sh /
-RUN cp /server.sh /netcat/server.sh
+RUN cp server.sh /netcat/server.sh
 
 WORKDIR /netcat
 RUN chmod u+x server.sh
 
+EXPOSE 2399
+
 CMD ["/netcat/server.sh"]
-# CMD ["/bin/sh"]
