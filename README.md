@@ -1,4 +1,4 @@
-# Transfer data between [Alpine containers](https://hub.docker.com/_/alpine) using [netcat](https://netcat.ru/developers/docs/#all)
+# Transfer data between [Alpine docker containers](https://hub.docker.com/_/alpine) using [netcat](https://netcat.ru/developers/docs/#all)
 
 ## Run containers
 - Add permission to execute:
@@ -9,9 +9,10 @@
     ```
     ./run-containers.sh
     ```
+- All running pipeline described in [script file](./run-containers.sh).
 
 ## Check results
-- Output file `output.log` in directory ./mount:
+- Output file `output.log` in directory `./mount`:
     ```
     Hello world
     Number 1
